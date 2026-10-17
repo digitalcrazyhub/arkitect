@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Page Not Found — 404 | Artech Design — Aspirations Architects Engineers</title>
+  <meta name="title" content="Page Not Found — 404 | Artech Design — Aspirations Architects Engineers">
+  <meta name="description" content="The architectural page or resource you requested could not be found. Return to Artech Design homepage or explore our architectural services and projects.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+
+  <!-- Google Fonts: Inter Tight -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <!-- Core & Shared Stylesheets -->
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    .not-found-section {
+      padding-top: var(--space-4xl);
+      padding-bottom: var(--space-4xl);
+      background-color: var(--bg-primary);
+      text-align: center;
+    }
+    .not-found-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-3xl) var(--space-2xl);
+      box-shadow: var(--shadow-sm);
+    }
+    .not-found-code {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 800;
+      color: var(--color-accent);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+    .not-found-title {
+      font-size: var(--font-size-h2);
+      font-weight: 700;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.01em;
+    }
+    .not-found-text {
+      font-size: var(--font-size-body);
+      color: var(--text-secondary);
+      line-height: var(--font-line-height-relaxed);
+      margin-bottom: var(--space-2xl);
+    }
+    .not-found-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+  </style>
+</head>
+<body>
+  <!-- Accessible Skip Navigation -->
+  <a href="#main-content" class="sr-only" style="top: 8px; left: 8px; z-index: 9999; background: #6C4E31; color: #fff; padding: 8px 16px; border-radius: 4px;">Skip to main content</a>
+
+  <!-- ==========================================================================
+       SECTION 1: GLOBAL NAVBAR (Loaded via js/components.js)
+       ========================================================================== -->
+  <div id="navbar-placeholder">
+    <header class="site-header fallback-nav">
+      <div class="container header-container">
+        <a href="index.html" class="brand-logo-link">
+          <img src="assets/images/logo/company-logo.png" alt="Aspirations Architects Engineers Logo" class="brand-logo-img" width="180" height="48">
+        </a>
+        <a href="contact.html" class="btn btn-primary">Contact Us &rarr;</a>
+      </div>
+    </header>
+  </div>
+
+  <main id="main-content" class="site-wrapper">
+
+    <!-- ==========================================================================
+         SECTION 2: GLOBAL INNER-PAGE BANNER
+         ========================================================================== -->
+    <section class="page-banner" aria-label="Page Banner">
+      <div class="page-banner-media">
+        <img src="assets/images/about/about-banner.jpg" alt="Architectural facade design" class="page-banner-img" loading="eager" width="1920" height="800">
+        <div class="page-banner-scrim" aria-hidden="true"></div>
+      </div>
+      <div class="container page-banner-content">
+        <h1 class="page-banner-title reveal-up">404 — Page Not Found</h1>
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav reveal-up">
+          <ol class="breadcrumb-list">
+            <li class="breadcrumb-item">
+              <a href="index.html" class="breadcrumb-link">Home</a>
+            </li>
+            <li class="breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="breadcrumb-item">
+              <span class="breadcrumb-current" aria-current="page">404</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: 404 ERROR CONTENT
+         ========================================================================== -->
+    <section class="not-found-section" aria-labelledby="not-found-heading">
+      <div class="container">
+        <div class="not-found-card card-lift reveal-zoom">
+          <div class="not-found-code" aria-hidden="true">404</div>
+          <h2 id="not-found-heading" class="not-found-title">We Couldn't Find That Page</h2>
+          <p class="not-found-text">
+            The architectural page or resource you are looking for may have been moved, renamed, or is temporarily unavailable. Please explore our practice areas or return to the homepage.
+          </p>
+          <div class="not-found-actions">
+            <a href="index.html" class="btn btn-primary">
+              <span>Return to Homepage</span>
+              <span class="btn-arrow-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="services.html" class="btn btn-outline">
+              <span>Explore Services</span>
+              <span class="btn-arrow-icon" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="contact.html" class="btn btn-outline">
+              <span>Contact Us</span>
+              <span class="btn-arrow-icon" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 4: GLOBAL FOOTER (Loaded via js/components.js)
+       ========================================================================== -->
+  <div id="footer-placeholder">
+    <footer class="site-footer fallback-footer">
+      <div class="container">
+        <p class="footer-meta-notes">&copy; 2026 Aspirations Architects Engineers. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Shared Modular JavaScript -->
+  <script src="js/components.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/cookie-consent.js"></script>
+  <script src="js/main.js"></script>
+  <!-- GSAP Animation Engine & Orchestrator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/skeleton.js"></script>
+</body>
+</html>

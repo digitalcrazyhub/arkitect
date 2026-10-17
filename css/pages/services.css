@@ -1,0 +1,479 @@
+/* ==============================================================================
+   ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+   SERVICES OVERVIEW PAGE SPECIFIC STYLES (css/pages/services.css)
+   NOTE: ALL media queries belong strictly in css/responsive.css.
+   ============================================================================== */
+
+/* ----------------------------------------------------------------------------
+   Section 3: Services Introduction
+   ---------------------------------------------------------------------------- */
+.services-intro-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.services-intro-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-intro-heading {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  line-height: var(--font-line-height-tight);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+
+.services-intro-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 500;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.services-intro-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.service-intro-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-intro-pill svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section 4: Six Service Categories Grid
+   ---------------------------------------------------------------------------- */
+.services-grid-section {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.services-section-header {
+  max-width: 680px;
+  margin-bottom: var(--space-3xl);
+}
+
+.services-overview-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2vw, 1.85rem);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.service-split-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.75rem);
+  align-items: stretch;
+}
+
+.service-split-card {
+  background-color: #F5F5F7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  padding: clamp(2.25rem, 3.5vw, 3.25rem) clamp(2rem, 3vw, 2.75rem);
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 2.8vw, 2.75rem);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.service-split-item:hover .service-split-card {
+  border-color: rgba(108, 78, 54, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  background-color: #FAF8F6;
+}
+
+.service-split-badge {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.service-split-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-split-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+  font-weight: 700;
+  color: var(--color-charcoal);
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.service-split-title a {
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline;
+}
+
+.service-split-title a:hover,
+.service-split-item:hover .service-split-title a {
+  color: var(--color-accent);
+}
+
+.service-split-desc {
+  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 62ch;
+  margin-bottom: var(--space-md);
+}
+
+.service-split-action {
+  margin-top: var(--space-xs);
+}
+
+.service-split-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.service-split-link:hover,
+.service-split-item:hover .service-split-link {
+  color: var(--color-accent-hover);
+}
+
+.service-split-link .btn-arrow-icon {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.service-split-item:hover .service-split-link .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+.service-split-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: var(--bg-surface-elevated);
+}
+
+.service-split-media-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.service-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-split-item:hover .service-split-img {
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------------------------
+   Section 5: Our Design Approach
+   ---------------------------------------------------------------------------- */
+.services-approach-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.services-approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.services-approach-media-col {
+  position: relative;
+}
+
+.services-approach-media-frame {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3.4;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-surface-elevated);
+}
+
+.services-approach-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services-approach-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(228, 224, 220, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.services-approach-badge-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.services-approach-badge-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.services-approach-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-approach-lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.services-approach-body {
+  font-size: 0.95rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.services-principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.services-principle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(228, 224, 220, 0.5);
+}
+
+.services-principle-item:last-child {
+  border-bottom: none;
+}
+
+.services-principle-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1.2;
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.services-principle-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.services-principle-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section: Frequently Asked Questions (FAQ)
+   ---------------------------------------------------------------------------- */
+.faq-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-header {
+  max-width: 760px;
+  margin: 0 auto var(--space-3xl) auto;
+}
+
+.faq-intro-text {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  line-height: var(--font-line-height-relaxed);
+  margin-top: var(--space-sm);
+}
+
+.faq-accordion-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.faq-item {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.faq-item[open] {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover,
+.faq-question:focus-visible {
+  color: var(--color-accent);
+  background-color: var(--bg-primary);
+  outline: none;
+}
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal), background-color var(--transition-fast);
+}
+
+.faq-icon::before {
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.faq-item[open] .faq-icon {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
+  font-size: var(--font-size-body-sm);
+  color: var(--text-secondary);
+  line-height: var(--font-line-height-relaxed);
+  border-top: 1px solid #F0ECE4;
+  padding-top: var(--space-md);
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.faq-answer p+p {
+  margin-top: 0.75rem;
+}
+
+.faq-answer a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.faq-answer a:hover {
+  color: var(--color-accent-hover);
+}

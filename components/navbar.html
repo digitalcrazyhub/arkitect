@@ -1,0 +1,146 @@
+<!-- ==============================================================================
+     ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+     GLOBAL NAVIGATION BAR COMPONENT (components/navbar.html)
+     ============================================================================== -->
+<header class="site-header" id="site-header">
+  <div class="container header-container">
+    <!-- Brand Identity -->
+    <a href="index.html" class="brand-logo-link" aria-label="Aspirations Architects Engineers - Home">
+      <img src="assets/images/logo/company-logo.png" alt="Aspirations Architects Engineers Logo" class="brand-logo-img" width="180" height="48">
+    </a>
+
+    <!-- Desktop Primary Navigation (All 5 Items Visible) -->
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link" id="nav-about">About Us</a>
+        </li>
+        <li class="nav-item has-dropdown" id="services-nav-item">
+          <div class="nav-services-trigger-group">
+            <a href="services.html" class="nav-link nav-services-link" id="services-main-link">
+              <span>Services</span>
+            </a>
+            <button type="button" class="dropdown-chevron-btn" id="services-menu-button" aria-expanded="false" aria-haspopup="true" aria-controls="services-dropdown-menu" aria-label="Toggle Services dropdown menu">
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="dropdown-menu" id="services-dropdown-menu" role="menu" aria-labelledby="services-menu-button">
+            <li role="none">
+              <a href="services.html" class="dropdown-link dropdown-overview-link" role="menuitem">
+                <strong>All Services Overview &rarr;</strong>
+              </a>
+            </li>
+            <li role="none"><a href="services/healthcare.html" class="dropdown-link" role="menuitem">Healthcare</a></li>
+            <li role="none"><a href="services/residential.html" class="dropdown-link" role="menuitem">Residential</a></li>
+            <li role="none"><a href="services/commercial.html" class="dropdown-link" role="menuitem">Commercial</a></li>
+            <li role="none"><a href="services/hospitality.html" class="dropdown-link" role="menuitem">Hospitality</a></li>
+            <li role="none"><a href="services/industrial.html" class="dropdown-link" role="menuitem">Industrial</a></li>
+            <li role="none"><a href="services/institutional.html" class="dropdown-link" role="menuitem">Institutional</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link" id="nav-projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link" id="nav-contact">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary header-cta">
+        <span>Contact Us</span>
+        <span class="btn-arrow-icon" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="hamburger-btn" id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Toggle navigation menu">
+        <span class="hamburger-line line-1"></span>
+        <span class="hamburger-line line-2"></span>
+        <span class="hamburger-line line-3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-drawer-inner">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link" id="mobile-nav-home">Home</a></li>
+          <li><a href="about.html" class="mobile-nav-link" id="mobile-nav-about">About Us</a></li>
+          
+          <!-- Mobile Services with Expandable Submenu & Direct Link -->
+          <li class="mobile-dropdown-group" id="mobile-services-group">
+            <div class="mobile-dropdown-header">
+              <a href="services.html" class="mobile-nav-link mobile-services-link" id="mobile-nav-services">Services</a>
+              <button type="button" class="mobile-dropdown-toggle-btn" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-menu" aria-label="Toggle Services submenu">
+                <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <ul class="mobile-submenu" id="mobile-services-menu">
+              <li><a href="services.html" class="mobile-sublink mobile-overview-link">All Services Overview &rarr;</a></li>
+              <li><a href="services/healthcare.html" class="mobile-sublink">Healthcare</a></li>
+              <li><a href="services/residential.html" class="mobile-sublink">Residential</a></li>
+              <li><a href="services/commercial.html" class="mobile-sublink">Commercial</a></li>
+              <li><a href="services/hospitality.html" class="mobile-sublink">Hospitality</a></li>
+              <li><a href="services/industrial.html" class="mobile-sublink">Industrial</a></li>
+              <li><a href="services/institutional.html" class="mobile-sublink">Institutional</a></li>
+            </ul>
+          </li>
+
+          <li><a href="projects.html" class="mobile-nav-link" id="mobile-nav-projects">Projects</a></li>
+          <li><a href="contact.html" class="mobile-nav-link" id="mobile-nav-contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Drawer Footer CTA & Highlighted Contact Area -->
+      <div class="mobile-drawer-footer">
+        <a href="contact.html" class="btn btn-primary btn-block">
+          <span>Discuss Your Project</span>
+          <span class="btn-arrow-icon" aria-hidden="true">&rarr;</span>
+        </a>
+
+        <!-- Highlighted Contact Information Area -->
+        <div class="mobile-contact-area">
+          <div class="mobile-contact-highlight">
+            <span class="mobile-contact-label">DIRECT INQUIRIES</span>
+            <a href="tel:04424818999" class="mobile-phone-link">
+              <svg class="contact-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span class="mobile-phone-num">044 2481 8999</span>
+            </a>
+          </div>
+
+          <address class="mobile-address-block">
+            <div class="mobile-address-row">
+              <svg class="contact-icon address-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span class="mobile-address-text">
+                New No. 17, Old No. 5, 1st Floor, Aryagowder Road, West Mambalam, Chennai – 600 033.
+              </span>
+            </div>
+            <div class="mobile-email-row">
+              <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:aspirations@arkitect.in" class="mobile-email-link">aspirations@arkitect.in</a>
+            </div>
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

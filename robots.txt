@@ -1,0 +1,20 @@
+# ==============================================================================
+# ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+# SEARCH ENGINE DIRECTIVES (robots.txt)
+# Official Website: https://arkitect.in
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /components/
+Allow: /services/
+
+# Disallow private backend system directories and logs
+Disallow: /backend/
+Disallow: /scratch/
+
+# Production XML Sitemap Reference
+Sitemap: https://arkitect.in/sitemap.xml

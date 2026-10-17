@@ -1,0 +1,367 @@
+/* ==============================================================================
+   ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+   PRIVACY POLICY PAGE STYLES (css/pages/privacy-policy.css)
+   ==============================================================================
+   NOTE: All responsive adaptations are strictly centralized in css/responsive.css.
+   Follows master design system tokens from css/root.css.
+   ============================================================================== */
+
+/* ----------------------------------------------------------------------------
+   Section Layout & Background
+   ---------------------------------------------------------------------------- */
+.privacy-section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-4xl);
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.privacy-layout-grid {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ----------------------------------------------------------------------------
+   Table of Contents Sidebar (Sticky)
+   ---------------------------------------------------------------------------- */
+.privacy-toc-col {
+  position: sticky;
+  top: calc(var(--navbar-height) + 24px);
+}
+
+.privacy-toc-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.privacy-toc-header {
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-toc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.privacy-toc-subtitle {
+  font-size: var(--font-size-caption);
+  color: var(--text-muted);
+}
+
+.privacy-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.privacy-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: all var(--transition-fast);
+}
+
+.privacy-toc-link:hover,
+.privacy-toc-link:focus-visible {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  outline: none;
+}
+
+.privacy-toc-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 1.5rem;
+}
+
+.privacy-toc-link:hover .privacy-toc-num {
+  color: var(--color-accent);
+}
+
+/* ----------------------------------------------------------------------------
+   Main Policy Content Container
+   ---------------------------------------------------------------------------- */
+.privacy-content-col {
+  min-width: 0;
+}
+
+.privacy-content-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl) var(--space-3xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Document Header Meta */
+.privacy-doc-header {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-md);
+}
+
+.privacy-doc-title {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--color-charcoal);
+  letter-spacing: -0.02em;
+  line-height: var(--font-line-height-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.privacy-doc-meta-notes {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Policy Section Blocks */
+.privacy-section-block {
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: calc(var(--navbar-height) + 28px);
+}
+
+.privacy-section-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.privacy-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.privacy-section-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.privacy-section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.privacy-lead-paragraph {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: var(--font-line-height-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+.privacy-text {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-secondary);
+  line-height: var(--font-line-height-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+.privacy-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Bulleted Policy Lists */
+.privacy-bullet-list {
+  margin: var(--space-md) 0 var(--space-lg) 0;
+  padding-left: 1.4rem;
+}
+
+.privacy-bullet-list li {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-secondary);
+  line-height: var(--font-line-height-relaxed);
+  margin-bottom: 0.6rem;
+}
+
+.privacy-bullet-list li strong {
+  color: var(--color-charcoal);
+}
+
+/* Informational Callout Cards */
+.privacy-callout-card {
+  background-color: var(--bg-primary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.privacy-callout-card p {
+  font-size: var(--font-size-body-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.privacy-callout-card p + p {
+  margin-top: 0.5rem;
+}
+
+/* Structured Data Category Table */
+.privacy-table-container {
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-size-body-sm);
+}
+
+.privacy-table th {
+  background-color: var(--color-stone-light);
+  color: var(--color-charcoal);
+  font-weight: 700;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.privacy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.privacy-table td strong {
+  color: var(--text-primary);
+}
+
+/* Contact Info Box inside Policy */
+.privacy-contact-box {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.privacy-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.privacy-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.privacy-contact-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.privacy-contact-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.privacy-contact-label {
+  display: block;
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.privacy-contact-val {
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+a.privacy-contact-val:hover,
+a.privacy-contact-val:focus-visible {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.privacy-contact-address {
+  font-style: normal;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Internal / In-text Links */
+.privacy-inline-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.privacy-inline-link:hover,
+.privacy-inline-link:focus-visible {
+  color: var(--color-accent-hover);
+}

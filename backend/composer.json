@@ -1,0 +1,18 @@
+{
+    "name": "arkitect/backend",
+    "description": "Secure Contact Form Backend for Artech Design (Aspirations Architects Engineers)",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "suggest": {
+        "google/apiclient": "Official Google API client for advanced Google Sheets features (^2.15)"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

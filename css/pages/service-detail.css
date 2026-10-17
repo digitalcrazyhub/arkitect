@@ -1,0 +1,432 @@
+/* ==============================================================================
+   ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+   SERVICE DETAIL PAGE STYLES (css/pages/service-detail.css)
+   NOTE: ALL media queries belong strictly in css/responsive.css.
+   ============================================================================== */
+
+/* ----------------------------------------------------------------------------
+   Section 2: Service Introduction (Two-Column Layout)
+   ---------------------------------------------------------------------------- */
+.service-intro-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.service-intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.service-intro-media-col {
+  position: relative;
+}
+
+.service-intro-media-frame {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3.4;
+  background-color: var(--bg-surface-elevated);
+}
+
+.service-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-intro-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(228, 224, 220, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-badge-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-badge-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.service-intro-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-intro-lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.service-intro-body {
+  font-size: 1rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.service-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.service-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.service-highlight-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.service-highlight-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.service-highlight-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section 3: Planning Considerations
+   ---------------------------------------------------------------------------- */
+.considerations-section {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.considerations-header {
+  max-width: 680px;
+  margin-bottom: var(--space-3xl);
+}
+
+.considerations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.consideration-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.consideration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-dark);
+}
+
+.consideration-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.05em;
+}
+
+.consideration-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+}
+
+.consideration-desc {
+  font-size: 0.92rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section 4: Facility Types Showcase
+   ---------------------------------------------------------------------------- */
+.facility-types-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.facility-types-header {
+  max-width: 680px;
+  margin-bottom: var(--space-3xl);
+}
+
+.facility-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.facility-type-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.facility-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-dark);
+}
+
+.facility-type-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-surface-elevated);
+}
+
+.facility-type-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.facility-type-card:hover .facility-type-img {
+  transform: scale(1.04);
+}
+
+.facility-type-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.facility-type-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.facility-type-desc {
+  font-size: 0.9rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section 5: Design Approach (Four-Step Process)
+   ---------------------------------------------------------------------------- */
+.detail-approach-section {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.detail-approach-header {
+  max-width: 680px;
+  margin-bottom: var(--space-3xl);
+}
+
+.detail-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.detail-approach-card {
+  position: relative;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.detail-approach-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.detail-approach-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: var(--space-lg);
+}
+
+.detail-approach-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-approach-desc {
+  font-size: 0.92rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   Section 6: Relevant Services
+   ---------------------------------------------------------------------------- */
+.related-services-section {
+  background-color: var(--bg-primary);
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.related-services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-3xl);
+  gap: var(--space-xl);
+}
+
+.related-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.related-service-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.related-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-dark);
+}
+
+.related-service-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-surface-elevated);
+}
+
+.related-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.related-service-card:hover .related-service-img {
+  transform: scale(1.04);
+}
+
+.related-service-body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.related-service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.related-service-desc {
+  font-size: 0.92rem;
+  line-height: var(--font-line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.related-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.related-service-link:hover,
+.related-service-link:focus-visible {
+  color: var(--color-accent-hover);
+  gap: 12px;
+}

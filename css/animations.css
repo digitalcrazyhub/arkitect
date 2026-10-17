@@ -1,0 +1,580 @@
+/* ==============================================================================
+   ARTECH DESIGN WEBSITE (Aspirations Architects Engineers)
+   CENTRAL ANIMATION ARCHITECTURE (css/animations.css)
+   Architectural, editorial, elegant, and restrained motion system.
+   NOTE: ALL media queries belong strictly in css/responsive.css.
+   ============================================================================== */
+
+:root {
+  /* Motion Curves & Easing Tokens */
+  --arch-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --arch-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --arch-ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --arch-ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Duration Standards */
+  --arch-dur-fast: 200ms;
+  --arch-dur-normal: 350ms;
+  --arch-dur-reveal: 700ms;
+  --arch-dur-image: 900ms;
+  --arch-dur-ambient: 8000ms;
+
+  /* Distance Tokens */
+  --arch-dist-sm: 14px;
+  --arch-dist-md: 28px;
+  --arch-dist-lg: 42px;
+}
+
+/* ----------------------------------------------------------------------------
+   1. Smooth In-Page Scrolling & Anchor Offset
+   ---------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--navbar-height, 84px) + 24px);
+}
+
+/* ----------------------------------------------------------------------------
+   2. Reading & Scroll Progress Indicator (Sticky Header Bottom Edge)
+   ---------------------------------------------------------------------------- */
+.arch-scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent, #6C4E36);
+  z-index: var(--z-sticky, 100);
+  pointer-events: none;
+  transition: width 80ms linear;
+}
+
+/* ----------------------------------------------------------------------------
+   3. Progressive Scroll Reveal Classes (Zero FOUC, Fallback-Safe)
+   Default state: Fully visible (opacity 1) if JS is not active.
+   Active JS state: html.animations-ready triggers restrained initial offsets.
+   ---------------------------------------------------------------------------- */
+html.animations-ready .reveal:not(.is-revealed),
+html.animations-ready .reveal-up:not(.is-revealed),
+html.js-reveal-active .arch-reveal:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(var(--arch-dist-md));
+  visibility: hidden;
+}
+
+html.animations-ready .reveal-fade:not(.is-revealed),
+html.js-reveal-active .arch-reveal-fade:not(.is-revealed) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+html.animations-ready .reveal-left:not(.is-revealed),
+html.js-reveal-active .arch-reveal-left:not(.is-revealed) {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--arch-dist-md)));
+  visibility: hidden;
+}
+
+html.animations-ready .reveal-right:not(.is-revealed),
+html.js-reveal-active .arch-reveal-right:not(.is-revealed) {
+  opacity: 0;
+  transform: translateX(var(--arch-dist-md));
+  visibility: hidden;
+}
+
+html.animations-ready .reveal-zoom:not(.is-revealed),
+html.js-reveal-active .arch-reveal-scale:not(.is-revealed) {
+  opacity: 0;
+  transform: scale(0.95);
+  visibility: hidden;
+}
+
+html.animations-ready .reveal-blur:not(.is-revealed) {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(16px);
+  visibility: hidden;
+}
+
+html.animations-ready .image-reveal:not(.is-revealed),
+html.js-reveal-active .arch-reveal-mask:not(.is-revealed) {
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+  visibility: hidden;
+}
+
+html.animations-ready .stagger-item:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(22px);
+  visibility: hidden;
+}
+
+/* Revealed Transitions */
+html.animations-ready .reveal.is-revealed,
+html.animations-ready .reveal-up.is-revealed,
+html.animations-ready .reveal-fade.is-revealed,
+html.animations-ready .reveal-left.is-revealed,
+html.animations-ready .reveal-right.is-revealed,
+html.animations-ready .reveal-zoom.is-revealed,
+html.animations-ready .stagger-item.is-revealed,
+html.js-reveal-active .arch-reveal.is-revealed,
+html.js-reveal-active .arch-reveal-fade.is-revealed,
+html.js-reveal-active .arch-reveal-left.is-revealed,
+html.js-reveal-active .arch-reveal-right.is-revealed,
+html.js-reveal-active .arch-reveal-scale.is-revealed {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity var(--arch-dur-reveal) var(--arch-ease-out),
+              transform var(--arch-dur-reveal) var(--arch-ease-out);
+  will-change: opacity, transform;
+}
+
+html.animations-ready .reveal-blur.is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+  visibility: visible;
+  transition: opacity var(--arch-dur-reveal) var(--arch-ease-out),
+              filter var(--arch-dur-reveal) var(--arch-ease-out),
+              transform var(--arch-dur-reveal) var(--arch-ease-out);
+  will-change: opacity, filter, transform;
+}
+
+html.animations-ready .image-reveal.is-revealed,
+html.js-reveal-active .arch-reveal-mask.is-revealed {
+  opacity: 1;
+  clip-path: inset(0% 0 0 0);
+  visibility: visible;
+  transition: opacity var(--arch-dur-reveal) var(--arch-ease-out),
+              clip-path var(--arch-dur-image) var(--arch-ease-out);
+  will-change: opacity, clip-path;
+}
+
+/* ----------------------------------------------------------------------------
+   4. Staggered Delays for Grid & List Children
+   ---------------------------------------------------------------------------- */
+.stagger-item:nth-child(1), [data-arch-stagger] > *:nth-child(1) { transition-delay: 50ms; }
+.stagger-item:nth-child(2), [data-arch-stagger] > *:nth-child(2) { transition-delay: 120ms; }
+.stagger-item:nth-child(3), [data-arch-stagger] > *:nth-child(3) { transition-delay: 190ms; }
+.stagger-item:nth-child(4), [data-arch-stagger] > *:nth-child(4) { transition-delay: 260ms; }
+.stagger-item:nth-child(5), [data-arch-stagger] > *:nth-child(5) { transition-delay: 330ms; }
+.stagger-item:nth-child(6), [data-arch-stagger] > *:nth-child(6) { transition-delay: 400ms; }
+.stagger-item:nth-child(7), [data-arch-stagger] > *:nth-child(7) { transition-delay: 470ms; }
+.stagger-item:nth-child(8), [data-arch-stagger] > *:nth-child(8) { transition-delay: 540ms; }
+
+/* ----------------------------------------------------------------------------
+   5. Architectural Card Hover & Image Zoom Systems
+   ---------------------------------------------------------------------------- */
+.card-lift,
+.arch-card-interactive,
+.service-split-card,
+.project-card,
+.feature-card,
+.process-card,
+.contact-card,
+.value-card {
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out),
+              box-shadow var(--arch-dur-normal) var(--arch-ease-out),
+              border-color var(--arch-dur-fast) ease,
+              background-color var(--arch-dur-fast) ease;
+  will-change: transform, box-shadow;
+}
+
+.card-lift:hover,
+.arch-card-interactive:hover,
+.service-split-card:hover,
+.project-card:hover,
+.feature-card:hover,
+.process-card:hover,
+.contact-card:hover,
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-lift:focus-within,
+.arch-card-interactive:focus-within {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Contained Image Hover Zoom (Architectural Precision) */
+.image-zoom-frame,
+.arch-img-zoom-frame,
+.card-media-col,
+.project-card-media {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom-frame img,
+.arch-img-zoom-frame img,
+.card-media-col img,
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--arch-dur-image) var(--arch-ease-out);
+  will-change: transform;
+}
+
+.card-lift:hover .image-zoom-frame img,
+.card-lift:hover .arch-img-zoom-frame img,
+.service-split-card:hover .card-media-col img,
+.project-card:hover .project-card-media img,
+.image-zoom-frame:hover img,
+.arch-img-zoom-frame:hover img {
+  transform: scale(1.042);
+}
+
+/* ----------------------------------------------------------------------------
+   6. Buttons & Interactive Controls Micro-Interactions
+   ---------------------------------------------------------------------------- */
+.btn {
+  transition: background-color var(--arch-dur-fast) ease,
+              color var(--arch-dur-fast) ease,
+              border-color var(--arch-dur-fast) ease,
+              transform var(--arch-dur-fast) var(--arch-ease-out),
+              box-shadow var(--arch-dur-fast) var(--arch-ease-out);
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-glow-accent, 0 8px 24px rgba(108, 78, 54, 0.25));
+}
+
+.btn .btn-arrow-icon,
+.btn svg {
+  transition: transform var(--arch-dur-fast) var(--arch-ease-out);
+  display: inline-block;
+}
+
+.btn:hover .btn-arrow-icon,
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-prev:hover .btn-arrow-icon,
+.btn-prev:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Button Directional Fill Effect */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent-hover, #563D2A);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out);
+  z-index: -1;
+}
+
+.btn-fill:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ----------------------------------------------------------------------------
+   7. Editorial Typography Underline Reveal
+   ---------------------------------------------------------------------------- */
+.link-underline,
+.arch-link-hover {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--arch-dur-fast) ease;
+}
+
+.link-underline::after,
+.arch-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+.link-underline:hover::after,
+.arch-link-hover:hover::after {
+  width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+   8. Navigation & Dropdown Animations
+   ---------------------------------------------------------------------------- */
+.site-header {
+  transition: background-color var(--arch-dur-normal) var(--arch-ease-out),
+              box-shadow var(--arch-dur-normal) var(--arch-ease-out),
+              border-color var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+/* Desktop Dropdown Smooth Unfold */
+.has-dropdown .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 220ms var(--arch-ease-out),
+              transform 220ms var(--arch-ease-out),
+              visibility 220ms;
+  pointer-events: none;
+}
+
+.has-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Chevron Rotation */
+.dropdown-chevron {
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+.has-dropdown.open .dropdown-chevron,
+.mobile-dropdown-group.open .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Mobile Hamburger Menu Icon Morph */
+.hamburger-btn .hamburger-line {
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out),
+              opacity var(--arch-dur-fast) ease,
+              background-color var(--arch-dur-fast) ease;
+  transform-origin: center;
+}
+
+.hamburger-btn.active .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.active .line-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-btn.active .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer Smooth Slide Entrance */
+.mobile-nav-drawer {
+  transition: opacity var(--arch-dur-normal) var(--arch-ease-out),
+              visibility var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+.mobile-drawer-inner {
+  transition: transform 420ms var(--arch-ease-out);
+}
+
+/* Mobile Accordion Submenu */
+.mobile-submenu {
+  transition: max-height 380ms var(--arch-ease-out),
+              opacity 300ms var(--arch-ease-out);
+}
+
+/* ----------------------------------------------------------------------------
+   9. Hero Carousel Cinematic Enhancements (Home)
+   ---------------------------------------------------------------------------- */
+@keyframes archHeroZoom {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-slide {
+  transition: opacity 900ms var(--arch-ease-out),
+              visibility 900ms;
+}
+
+.hero-slide.active .hero-bg-img {
+  animation: archHeroZoom 8000ms var(--arch-ease-out) forwards;
+}
+
+.hero-slide .hero-eyebrow,
+.hero-slide .hero-headline,
+.hero-slide .hero-description,
+.hero-slide .hero-cta-group {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms var(--arch-ease-out),
+              transform 650ms var(--arch-ease-out);
+}
+
+.hero-slide.active .hero-eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 140ms;
+}
+
+.hero-slide.active .hero-headline {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+.hero-slide.active .hero-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 360ms;
+}
+
+.hero-slide.active .hero-cta-group {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 480ms;
+}
+
+/* Hero Slide Indicators */
+.hero-dot {
+  transition: background-color var(--arch-dur-fast) ease,
+              transform var(--arch-dur-fast) var(--arch-ease-out),
+              width var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+.hero-dot.active {
+  transform: scale(1.1);
+}
+
+/* ----------------------------------------------------------------------------
+   10. Page Banner Entrance Sequence
+   ---------------------------------------------------------------------------- */
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-banner-title {
+  transition: opacity 600ms var(--arch-ease-out),
+              transform 600ms var(--arch-ease-out);
+}
+
+.breadcrumb-nav {
+  transition: opacity 600ms var(--arch-ease-out) 150ms,
+              transform 600ms var(--arch-ease-out) 150ms;
+}
+
+/* ----------------------------------------------------------------------------
+   11. Services Split-Cards & Project Gallery Animations
+   ---------------------------------------------------------------------------- */
+.service-split-card .card-index-badge {
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out),
+              background-color var(--arch-dur-fast) ease,
+              color var(--arch-dur-fast) ease;
+}
+
+.service-split-card:hover .card-index-badge {
+  transform: scale(1.06);
+}
+
+.service-split-card .card-action-link svg {
+  transition: transform var(--arch-dur-fast) var(--arch-ease-out);
+}
+
+.service-split-card:hover .card-action-link svg {
+  transform: translateX(5px);
+}
+
+.project-card .project-view-btn svg {
+  transition: transform var(--arch-dur-fast) var(--arch-ease-out);
+}
+
+.project-card:hover .project-view-btn svg {
+  transform: translateX(4px);
+}
+
+/* Lightbox Modal Entrance */
+.project-lightbox {
+  transition: opacity 280ms var(--arch-ease-out),
+              visibility 280ms;
+}
+
+.project-lightbox .lightbox-dialog {
+  transition: transform 320ms var(--arch-ease-out),
+              opacity 320ms var(--arch-ease-out);
+  transform: scale(0.97);
+  opacity: 0;
+}
+
+.project-lightbox.active .lightbox-dialog {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   12. Contact Form Subtle Animations
+   ---------------------------------------------------------------------------- */
+.form-input,
+.form-select,
+.form-textarea {
+  transition: border-color var(--arch-dur-fast) ease,
+              box-shadow var(--arch-dur-fast) ease,
+              background-color var(--arch-dur-fast) ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-accent, #6C4E36);
+  box-shadow: 0 0 0 3px rgba(108, 78, 54, 0.14);
+}
+
+/* ----------------------------------------------------------------------------
+   13. FAQ Accordion Animation (services.html)
+   ---------------------------------------------------------------------------- */
+.faq-item {
+  transition: border-color var(--arch-dur-fast) ease,
+              box-shadow var(--arch-dur-fast) ease;
+}
+
+.faq-item[open] {
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question .faq-chevron {
+  transition: transform var(--arch-dur-normal) var(--arch-ease-out);
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  animation: faqExpand 320ms var(--arch-ease-out) forwards;
+}
+
+@keyframes faqExpand {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

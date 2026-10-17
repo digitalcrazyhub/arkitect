@@ -1,0 +1,40 @@
+# Environment configuration and secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/.env.local
+backend/.env.*.local
+*.env
+
+# Dependencies
+vendor/
+backend/vendor/
+
+# Backend logs and cache
+backend/logs/*.log
+backend/logs/*.txt
+!backend/logs/.gitkeep
+
+# Operating system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Temporary, backup, and scratch files
+*.tmp
+*.bak
+*.orig
+scratch/
