@@ -32,6 +32,18 @@
     // 1. Category Filtering
     // -------------------------------------------------------------------------
     if (filterButtons.length && projectCards.length) {
+      // Sync filter count badges dynamically to match active cards
+      filterButtons.forEach((btn) => {
+        const filter = btn.getAttribute('data-filter') || 'all';
+        const badge = btn.querySelector('.filter-count-badge');
+        if (badge) {
+          const count = filter === 'all'
+            ? projectCards.length
+            : projectCards.filter(c => c.getAttribute('data-category') === filter).length;
+          badge.textContent = count;
+        }
+      });
+
       filterButtons.forEach((btn) => {
         btn.addEventListener('click', function () {
           const selectedFilter = this.getAttribute('data-filter') || 'all';
@@ -96,11 +108,16 @@
         if (category) {
           lightboxCategory.textContent = category.textContent.trim();
         } else {
-          const rawCat = targetCard.getAttribute('data-category') || '';
-          const formattedCat = rawCat
-            ? rawCat.charAt(0).toUpperCase() + rawCat.slice(1) + ' Architecture'
-            : 'Architecture';
-          lightboxCategory.textContent = formattedCat;
+          const customType = targetCard.getAttribute('data-type');
+          if (customType) {
+            lightboxCategory.textContent = customType;
+          } else {
+            const rawCat = targetCard.getAttribute('data-category') || '';
+            const formattedCat = rawCat
+              ? rawCat.charAt(0).toUpperCase() + rawCat.slice(1) + ' Architecture'
+              : 'Architecture';
+            lightboxCategory.textContent = formattedCat;
+          }
         }
       }
       if (lightboxDesc && desc) {

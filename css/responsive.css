@@ -539,23 +539,13 @@
     flex-shrink: 0;
   }
 
-  /* Project Gallery Cards Touch / Tablet Portrait State */
-  .project-card {
-    aspect-ratio: 16 / 12;
-  }
-
-  .project-card .project-card-scrim {
-    opacity: 0.85;
-  }
-
-  .project-card .project-card-body {
-    opacity: 1;
-    transform: translateZ(0) translateY(0);
-    pointer-events: auto;
+  /* Project Gallery Cards Tablet Portrait State */
+  .project-card-body {
+    padding: var(--space-lg);
   }
 
   .project-card-desc {
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 
   .lightbox-dialog {
